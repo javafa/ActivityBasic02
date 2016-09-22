@@ -23,9 +23,10 @@
     setResult(1, intent);
 
 2. 호출한 액티비티로 부터 값을 돌려받을 때 호출되는 함수
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        super.onActivityResult(requestCode, resultCode, data);
+	super.onActivityResult(requestCode, resultCode, data);
         
     }
     
