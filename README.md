@@ -13,13 +13,19 @@
   다. 값을 받을 때
   
   Intent intent = getIntent();
+  
   Bundle bundle = intent.getExtras();
+  
   String str = bundle.getString("key1");
 	
   라. 값을 돌려 줄때
+  
     setResult(1, intent);
 
 2. 호출한 액티비티로 부터 값을 돌려받을 때 호출되는 함수
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         super.onActivityResult(requestCode, resultCode, data);
+        
     }
+    
