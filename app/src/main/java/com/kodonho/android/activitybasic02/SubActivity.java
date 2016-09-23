@@ -31,7 +31,8 @@ public class SubActivity extends AppCompatActivity {
         // 3. 꾸러미에서 key값을 찾아 원하는 값을 꺼낸다
         String str = bundle.getString("key1");
 
-        et.setText(eval(str));
+        et.setText(str);
+        //et.setText(eval(str));
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,8 +53,12 @@ public class SubActivity extends AppCompatActivity {
     }
 
     // 문자열을 수식으로 변경한 후 결과값을 리턴하는 함수
+    // 이건 계산기에서 사용하시면 됩니다
+    // * 사용법 주요사항
+    //   핸드폰 키보드에서 입력받은 곱하기, 나누기 등은 특수문자로 인식되어 연산되지 않음
+    //   따라서 나누기 -> /  , 곱하기 -> * 로 변경하여야한다
     public String eval(String str){
-        String result = "";
+        String result = "연산식오류";
         try {
             // 1. jexl 엔진 생성
             JexlEngine jexl = new JexlEngine();
